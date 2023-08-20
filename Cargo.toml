@@ -1,0 +1,30 @@
+[package]
+name = "controller-manager-rs"
+version = "0.1.0"
+keywords = ["crds", "controllers", "kubernetes"]
+description = "A Kubernetes controller manager framework is designed to simplify the development of CRD controllers."
+documentation = "https://github.com"
+authors = [
+  "WangYiwei <173549182@qq.com>",
+]
+default-run = "controller-manager-rs"
+edition = "2021"
+readme = "README.md"
+repository = "https://github.com/Wangyiwei-So/controller-manager-rs"
+
+include = [
+    "build.rs",
+    "Cargo.toml",
+    "README.md",
+    "src/**/*",
+]
+
+[badges]
+maintenance = {status = "experimental"} #actively-developed/ passively-maintained/ as-is/ experimental/ looking-for-maintainer/ deprecated/ none
+
+[dependencies]
+anyhow = "1.0"
+dirs = "5.0"
+kube = "0.85.0"
+k8s-openapi = {version = "0.19", default-features = false, features = ["v1_26"]}
+tokio = { version = "1.32.0", features = ["full"] }
